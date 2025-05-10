@@ -4,7 +4,7 @@ import { Card } from "./card.jsx";
 
 export const CardsContainer = () => {
     const [foodData, setFoodData] = useState([]);
-    const [allFoodData, setAllFoodData] = useState([]); // Backup for original data
+    const [allFoodData, setAllFoodData] = useState([]);
 
     // Fetch data on mount
     useEffect(() => {
@@ -12,15 +12,14 @@ export const CardsContainer = () => {
             .then((res) => res.json())
             .then((resJson) => {
                 setFoodData(resJson.recipes);
-                setAllFoodData(resJson.recipes); // Backup
+                setAllFoodData(resJson.recipes); 
             })
             .catch((err) => console.log(err));
     }, []);
       
-    // Filter by category
     const selectCategory = (category) => {
         if (category === "All") {
-            setFoodData(allFoodData);  // Reset to original data
+            setFoodData(allFoodData);
         } else {
             const filteredData = allFoodData.filter((item) => {
                 return item.mealType.includes(category);
@@ -53,7 +52,7 @@ export const CardsContainer = () => {
             <div className='cardsContainer'>
                 {foodData.map((item) => (
                     <Card
-                        key={item.id}  // Unique key
+                        key={item.id} 
                         foodName={item.name}
                         reviews={item.reviewCount}
                         img={item.image}
