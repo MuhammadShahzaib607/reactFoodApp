@@ -1,0 +1,7 @@
+card ==>> create                 ==>> 
+container ==>> card show         ==>> 
+serach input ==>> forkify API    ==>> 
+forkify API ==>> list render     ==>> 
+categories ==>> create           ==>> 
+categories ==>> functionality    ==>> 
+website ==>> deploy ==>> vercel  ==>> 
